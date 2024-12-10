@@ -12,13 +12,13 @@ const Form = () => {
     age: "",
     profession: "",
     gender: "",
-    photo: null, // Added photo field
+    photo: null, 
   });
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "photo") {
-      setFormData({ ...formData, photo: files[0] }); // Handle photo file upload
+      setFormData({ ...formData, photo: files[0] }); 
     } else {
       setFormData({ ...formData, [name]: value });
     }
@@ -27,7 +27,7 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data Submitted:", formData);
-    dispatch(AddForm(formData)); // Dispatch data including photo
+    dispatch(AddForm(formData)); 
     navigate("/about");
   };
 
